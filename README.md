@@ -27,7 +27,19 @@ Run `./mvnw clean build`
 
 
 ## How to run this service as a Docker container
-1. Run `docker build -t membership:0.0.1 .`
-2. Run `docker run -d -p 4444:4444 membership:0.0.1`
-3. Access to `http://localhost:4444/api/members/making`
-4. Run `docker stop <container_id>`
+
+### 1) Setup
+1. Run `docker network create msa`
+2. Run `docker build -t membership:0.0.1 .`
+
+<br>
+
+### 2) Start
+1. Run `docker run --name membership --network msa -d -p 4444:4444 membership:0.0.1`
+2. Access to `http://localhost:4444/api/members/making`
+
+<br>
+
+### 3) Stop
+1. Run `docker stop <container_id>`
+2. Run `docker rm membership`
