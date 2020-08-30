@@ -22,3 +22,12 @@ Run [src/main/java/com/metflix/MembershipApplication.java](https://github.com/ha
 
 ## How to run tests
 Run `./mvnw clean build`
+
+<br>
+
+
+## How to run this service as a Docker container
+1. Run `docker build -t membership:0.0.1 .`
+2. Run `docker run -d -p 4444:4444 membership:0.0.1`
+3. Access to `http://localhost:4444/api/members/making`
+4. Run `docker stop <container_id>`
